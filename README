@@ -1,1 +1,22 @@
 This file was created by IntelliJ IDEA 12.1.6 for binding GitHub repository
+
+CPSC 461
+
+Question 3 (15%) (Programming).
+
+This question deals with creating a data structure for large numbers (nonnegative). You have to read from an input file, say, "input", data of the following kind:
+
+980089673400089200098129823 # 120006734009867453400
+#23457689020#1000000000000000000209 #34567892 #
+
+Note that every big number is followed by a hash(#) symbol as shown above. Moreover the digits of the big number are consecutive (you may assume this to be always true in the input if that simplifies the design). Neither the number of digits in a big number is known a priori nor is the number of such large numbers in the input file. Your program should read such an input file and produce a output file of the following form:
+
+/* Output From Program */
+Big Number 1: 27 digits : 980089673400098200098129893
+Big Number 2: .......................................
+
+Note that the representation chosen for a big number is to be a linked list where each node should contain certain fragments of the large number. A possible representation is outlined below but you may choose a different one if you so please. A node may be a short integer storing the number of digits, one of the 4 digit fragments or a link. The data of the first node should hold the number of digits in the number and remaining nodes for a particular long integer would store 4 consecutive digits of the large number.
+
+The internal representation for the first input number would be:
+27 -> 9800 -> 8967 -> 3400 -> 982 -> 9 -> 8129 -> 893.
+However, when you generate back the number, you have to account for the missing zeros in the above representation. You may choose to read the input as a character array, convert to numbers as you proceed and assemble the linked list.
